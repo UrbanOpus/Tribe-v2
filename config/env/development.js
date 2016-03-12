@@ -17,8 +17,26 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+   log: {
+     level: 'debug'
+   },
 
+   models: {
+     connection: 'localMongodbServer',
+     migrate: 'safe'
+   },
+
+   connections: {
+     localDiskDb: {
+       adapter: 'sails-disk'
+     },
+     localMongodbServer: {
+       adapter: 'sails-mongo',
+       host: 'localhost',
+       port: 27017,
+       user: 'user',
+       password: 'password',
+       database: 'tribe'
+     }
+   }
 };

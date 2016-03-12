@@ -53,6 +53,18 @@ module.exports.routes = {
     skipAssets: true
   },
 
+  'post /tribe/:id/join': {
+    controller: 'TribeController',
+    action: 'join',
+    skipAssets: true
+  },
+
+  'get /content/img/:id': {
+    controller: 'ContentController',
+    action: 'img',
+    skipAssets: true
+  },
+
   //Passport related routes for user creation.
 
   'get /login': 'AuthController.login',

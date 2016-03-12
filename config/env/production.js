@@ -31,8 +31,20 @@ module.exports = {
    * Set the log level in production environment to "silent"                 *
    ***************************************************************************/
 
-  // log: {
-  //   level: "silent"
-  // }
+  log: {
+     level: 'silent'
+  },
+
+  models: {
+     connection: 'production',
+     migrate: 'safe'
+  },
+
+  connections: {
+    production: {
+      adapter: 'sails-mongo',
+      url: process.env.MONGOLAB_URI || 'mongodb://user:password@localhost:27017/tribe',
+    }
+  },
 
 };
